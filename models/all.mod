@@ -4,5 +4,7 @@
 .include KT315B.mod
 .include KT368B.mod
 .include 2T325V.mod
+.include QBD135.mod
+.include QBD136.mod
 .include BJTNPN.mod
 

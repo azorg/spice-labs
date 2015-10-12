@@ -12,7 +12,7 @@ CCOR ve vce 10pF
 CVCC VCC 0 1000uF  
 
 * дроссель частотной коррекции в коллекторной цепи VT1
-LCOR vc vl 33uH
+LCOR vl vc 33uH
 
 * резисторы
 R1 vb VCC 30k

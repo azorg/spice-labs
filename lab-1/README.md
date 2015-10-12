@@ -43,6 +43,8 @@ http://ngspice.sourceforge.net/
 
 > ngspice 2 -> op
 
+> ngspice 2 -> display
+
 > ngspice 2 -> print vcc vsin vb vc ve vce ve2
 
 ### Симуляция переходного процесса
