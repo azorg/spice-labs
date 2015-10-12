@@ -7,4 +7,5 @@
 .include QBD135.mod
 .include QBD136.mod
 .include BJTNPN.mod
+.include NSPW500BS.mod
 

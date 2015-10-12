@@ -1,5 +1,7 @@
 lab*.net
 lab*.sch~
+lab*.raw
+lab*.log
 #lab*.sch#
 result.dat
 result.txt
