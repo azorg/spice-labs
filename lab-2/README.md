@@ -38,17 +38,13 @@ SPICE описание схемы устройства
 
 > ngspice 2 -> plot (vcc-vled1) (vcc-vled2)
 
-или
-
-> ngspice 2 -> plot tran.v(vcc - vled1) tran.v(vcc - vled2)
-
 Напряжние на C1:
 
 > ngspice 2 -> plot vc1 - vb2
 
 Ток через светодиод LED1:
 
-> ngspice 2 -> plot (vled1 - vc3)/51
+> ngspice 2 -> plot (vled1 - vc3)/57
 
 ### Задания для самостоятельной работы
 
