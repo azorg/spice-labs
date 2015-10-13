@@ -41,11 +41,11 @@ http://ngspice.sourceforge.net/
 
 ### Проверка работы схемы по постоянному току и контроль напряжений
 
-> ngspice 2 -> op
+> -> op
 
-> ngspice 2 -> display
+> -> display
 
-> ngspice 2 -> print vcc vsin vb vc ve vce ve2
+> -> print vcc vsin vb vc ve vce ve2
 
 ### Симуляция переходного процесса
 
@@ -59,7 +59,7 @@ http://ngspice.sourceforge.net/
 
 или
 
-> ngspice 2 -> plot tran.v(vout) tran.v(vin)
+> -> plot tran.v(vout) tran.v(vin)
 
 ### Снятие АЧХ/ФЧХ
 
