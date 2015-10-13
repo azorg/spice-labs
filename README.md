@@ -14,7 +14,7 @@ SPICE = Simulation Program with Integrated Circuit Emphasis
 ## Каталог "models"
 Файлы SPICE моделей.
 
-## Каталог "docs"
+## Каталог "doc"
 Различная документация по ngspice, gnucap, geda и т.п..
 
 ### Полезные ссылки:
