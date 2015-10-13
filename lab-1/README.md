@@ -49,13 +49,13 @@ http://ngspice.sourceforge.net/
 
 ### Симуляция переходного процесса
 
-> ngspice 2 -> run
+> -> run
 
 или (с установкой времени и шага моделирования)
 
-> ngspice 2 -> tran 1u 3m
+> -> tran 1u 3m
 
-> ngspice 2 -> plot vin vout
+> -> plot vin vout
 
 или
 
@@ -65,25 +65,25 @@ http://ngspice.sourceforge.net/
 
 #### 1-300 Гц (линейная шкала по частоте)
 
-> ngspice 2 -> ac lin 1000 1Hz 300kHz
+> -> ac lin 1000 1Hz 300kHz
 
-> ngspice 2 -> plot db(ac.v(vout)/1m)
+> -> plot db(ac.v(vout)/1m)
 
-> ngspice 2 -> plot ph(ac.v(vout))*360/(2*pi)
+> -> plot ph(ac.v(vout))*360/(2*pi)
 
 #### 100 Гц - 100 МГц (логарифмическая шкала по частоте)
 
-> ngspice 2 -> ac dec 1000 1Hz 30MegHz
+> -> ac dec 1000 1Hz 30MegHz
 
-> ngspice 2 -> plot db(ac.v(vout)/1m)
+> -> plot db(ac.v(vout)/1m)
 
-> ngspice 2 -> plot ph(ac.v(vout))*360/(2*pi)
+> -> plot ph(ac.v(vout))*360/(2*pi)
 
 ### Оценка активного входного сопротивления [Ом] в зависимости от частоты
 
-> ngspice 2 -> ac dec 1000 1Hz 30MegHz
+> -> ac dec 1000 1Hz 30MegHz
 
-> ngspice 2 -> plot (ac.v(vin) * 1k) / (1m - ac.v(vin))
+> -> plot (ac.v(vin) * 1k) / (1m - ac.v(vin))
 
 ### Задания для самостоятельной работы
 
