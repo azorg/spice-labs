@@ -33,7 +33,7 @@ VCC vcc 0 DC 9V
 * источник сигнала
 VSIN vsin 0 dc 0 ac 1mV sin(0 1mV 1kHz)
 
-* NPN транзисторы
+* n-p-n транзисторы
 QVT1 vc  vb ve  KT368B
 QVT2 VCC vc ve2 KT368B
 
