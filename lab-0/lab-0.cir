@@ -25,7 +25,7 @@
 VCC vcc 0 DC 5V
 
 * источник синусоидального сигнала
-VSIN vsin 0 dc 0 ac 1mV sin(0 100mV 1kHz)
+VSIN vsin 0 dc 0 ac 1mV sin(0 1mV 1kHz)
 
 * входные конденсаторы
 CIN1 vin1 vb1 10uF
