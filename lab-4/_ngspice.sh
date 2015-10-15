@@ -4,7 +4,7 @@
 i=$(basename `pwd` | sed 's/lab-//')
 
 # расширение SPICE модели
-ext="cir"
+ext="ckt"
 
 ngspice "lab-${i}.${ext}"
 
