@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for i in `seq 1 10`
+for i in `seq 0 10`
 do
   d="lab-${i}"
   test -d "${d}" || continue

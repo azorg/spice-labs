@@ -51,9 +51,7 @@ SPICE модели биполярного транзистора.
 > ngspice lab-3.cir
 
 > -> op
-
 > -> print vc vb
-
 > -> show qvt
 
 ### Построение входных ВАХ
