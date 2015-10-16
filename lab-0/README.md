@@ -60,16 +60,19 @@ http://ngspice.sourceforge.net/
 Контроль напряжений:
 
 > -> display
+
 > -> print vb1 vb2 vc1 vc2
 
 Контроль токов (только для "lab-0.cir"):
 
 > -> print i(vb1) i(vc1) i(ve1)
+
 > -> print i(vb2) i(vc2) i(ve2)
 
 Контроль рабочей точки транзисторов (в т.ч. начальных токов):
 
 > -> show qvt1
+
 > -> show qvt2
 
 ### Симуляция переходного процесса
@@ -95,7 +98,9 @@ http://ngspice.sourceforge.net/
 ### Снятие АЧХ/ФЧХ
 
 > -> ac oct 3000 1Hz 100MegHz
+
 > -> plot db(ac.v(vout1)/1m) db(ac.v(vout2)/1m)
+
 > -> plot ph(ac.v(vout1))*360/(2*pi) ph(ac.v(vout2))*360/(2*pi)
 
 ### Задания для самостоятельной работы

@@ -45,11 +45,13 @@ http://ngspice.sourceforge.net/
 Контроль напряжений:
 
 > -> display
+
 > -> print vcc vsin vb vc ve vce ve2
 
 Контроль рабочей точки транзисторов (в т.ч. начальных токов):
 
 > -> show qvt1
+
 > -> show qvt2
 
 ### Симуляция переходного процесса
@@ -59,6 +61,7 @@ http://ngspice.sourceforge.net/
 или (с установкой времени и шага моделирования)
 
 > -> tran 1u 3m
+
 > -> plot vin vout
 
 или
@@ -70,18 +73,23 @@ http://ngspice.sourceforge.net/
 #### 1-300 Гц (линейная шкала по частоте)
 
 > -> ac lin 1000 1Hz 300kHz
+
 > -> plot db(ac.v(vout)/1m)
+
 > -> plot ph(ac.v(vout))*360/(2*pi)
 
 #### 100 Гц - 100 МГц (логарифмическая шкала по частоте)
 
 > -> ac dec 1000 1Hz 30MegHz
+
 > -> plot db(ac.v(vout)/1m)
+
 > -> plot ph(ac.v(vout))*360/(2*pi)
 
 ### Оценка активного входного сопротивления [Ом] в зависимости от частоты
 
 > -> ac dec 1000 1Hz 30MegHz
+
 > -> plot (ac.v(vin) * 1k) / (1m - ac.v(vin))
 
 ### Задания для самостоятельной работы
