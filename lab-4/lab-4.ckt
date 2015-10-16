@@ -24,19 +24,19 @@
 *^^^^^^^^  End of included SPICE model from ../models/KT361B.mod ^^^^^^^^
 *
 *==============  Begin SPICE netlist of main design ============
-R1 vb1 vin 4.7k  
-R2 Vcc vc1 2.2k  
-R3 0 ve 1.8k  
-R4 vc1 vb2 4.7k  
-R5 vb2 0 10k  
-R6 vb3 vc2 2k  
-R7 Vcc vb3 750  
+R1 vb1 vin 10k  
+R2 Vcc vc1 4.7k  
+R3 0 ve 4.7k  
+R4 vc1 vb2 10k  
+R5 vb2 0 22k  
+R6 vb3 vc2 4.7k  
+R7 Vcc vb3 4.7k  
 RL vout 0 1k  
 QT1 vc1 vb1 ve KT315B 
 QT2 vc2 vb2 ve KT315B 
 QT3 vout vb3 Vcc KT361B 
 VCC Vcc 0 DC 5V
-VIN vin 0 DC 2V pulse(0V 5V 2ms 2ms 2ms 3ms 10ms)
+VIN vin 0 DC 2V pulse(1V 4V 2ms 2ms 2ms 3ms 10ms)
 .options TEMP=27
-.INCLUDE simulation.cmd
+.tran 1us 30ms
 .end
