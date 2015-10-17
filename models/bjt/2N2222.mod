@@ -6,3 +6,11 @@
 +  RC=0.3567 CJC=11.02p VJC=0.3869 MJC=0.3292 FC=0.5 CJE=29.31p VJE=0.9036
 +  MJE=0.4101 TR=38.32n TF=361.8p ITF=5.282 XTF=249.9 VTF=10)
 
+* SPICE модель классического импортного транзистора 2N2222
+* позаимствовано из "LTSpice IV"
+.model 2N2222_LT NPN(IS=1E-14 VAF=100
++   BF=200 IKF=0.3 XTB=1.5 BR=3
++   CJC=8E-12 CJE=25E-12 TR=100E-9 TF=400E-12
++   ITF=1 VTF=2 XTF=3 RB=10 RC=.3 RE=.2)
+*   Vceo=30 Icrating=800m  mfg=NXP
+

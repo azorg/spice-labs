@@ -12,4 +12,12 @@
 *             Fairchild        pid=23          case=TO92
 *             88-09-08 bam    creation
 
+* SPICE модель транзистора 2N3904
+* позаимствовано из "LTSpice IV"
+.model 2N3904_LT NPN(IS=1E-14 VAF=100
++  Bf=300 IKF=0.4 XTB=1.5 BR=4
++  CJC=4E-12 CJE=8E-12 RB=20 RC=0.1 RE=0.1
++  TR=250E-9 TF=350E-12 ITF=1 VTF=2 XTF=3 Vceo=40)
+*  Icrating=200m mfg=NXP
+
 
