@@ -100,7 +100,7 @@ refdes=A3
 T 43700 47700 5 10 1 1 0 0 1
 model-name=2N3904
 T 43000 47500 5 10 1 1 0 0 1
-file=../models/2N3904.mod
+file=../models/bjt/2N3904.mod
 }
 T 44900 43600 9 10 1 0 0 0 2
 Источник

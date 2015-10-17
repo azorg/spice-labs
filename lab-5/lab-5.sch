@@ -22,7 +22,7 @@ refdes=A6
 T 50700 44000 5 10 1 1 0 0 1
 model-name=KD213A
 T 49900 43800 5 10 1 1 0 0 1
-file=../models/KD213A.mod
+file=../models/d/KD213A.mod
 }
 T 43600 46600 9 10 1 0 0 0 2
 Напряжение сети

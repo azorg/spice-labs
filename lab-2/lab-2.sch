@@ -50,33 +50,33 @@ refdes=VT2
 T 50300 45400 5 10 1 1 0 0 1
 value=2N2222
 }
-C 53500 47500 1 0 0 spice-include-1.sym
+C 53400 47500 1 0 0 spice-include-1.sym
 {
-T 53600 47800 5 10 0 1 0 0 1
+T 53500 47800 5 10 0 1 0 0 1
 device=include
-T 53600 47900 5 10 1 1 0 0 1
+T 53500 47900 5 10 1 1 0 0 1
 refdes=A2
-T 54000 47600 5 10 1 1 0 0 1
+T 53900 47600 5 10 1 1 0 0 1
 file=simulation.cmd
 }
-C 53500 46400 1 0 0 spice-model-1.sym
+C 53400 46400 1 0 0 spice-model-1.sym
 {
-T 53600 47100 5 10 0 1 0 0 1
+T 53500 47100 5 10 0 1 0 0 1
 device=model
-T 53600 47000 5 10 1 1 0 0 1
+T 53500 47000 5 10 1 1 0 0 1
 refdes=A3
-T 54700 46700 5 10 1 1 0 0 1
+T 54600 46700 5 10 1 1 0 0 1
 model-name=2N2222
-T 54000 46500 5 10 1 1 0 0 1
-file=../models/2N2222.mod
+T 53900 46500 5 10 1 1 0 0 1
+file=../models/bjt/2N2222.mod
 }
-C 53500 48400 1 0 0 spice-directive-1.sym
+C 53400 48400 1 0 0 spice-directive-1.sym
 {
-T 53600 48700 5 10 0 1 0 0 1
+T 53500 48700 5 10 0 1 0 0 1
 device=directive
-T 53600 48800 5 10 1 1 0 0 1
+T 53500 48800 5 10 1 1 0 0 1
 refdes=A1
-T 53500 48500 5 10 1 1 0 0 1
+T 53400 48500 5 10 1 1 0 0 1
 value=.options TEMP=25
 }
 C 50900 44000 1 0 0 npn-3.sym
@@ -211,16 +211,16 @@ netname=vb2
 }
 N 48500 45500 48500 46000 4
 N 48500 46000 47000 46000 4
-C 53500 45300 1 0 0 spice-model-1.sym
+C 53400 45300 1 0 0 spice-model-1.sym
 {
-T 53600 46000 5 10 0 1 0 0 1
+T 53500 46000 5 10 0 1 0 0 1
 device=model
-T 53600 45900 5 10 1 1 0 0 1
+T 53500 45900 5 10 1 1 0 0 1
 refdes=A4
-T 54700 45600 5 10 1 1 0 0 1
+T 54600 45600 5 10 1 1 0 0 1
 model-name=NSPW500BS
-T 54000 45400 5 10 1 1 0 0 1
-file=../models/NSPW500BS.mod
+T 53900 45400 5 10 1 1 0 0 1
+file=../models/led/NSPW500BS.mod
 }
 C 43600 46000 1 90 0 resistor-2.sym
 {

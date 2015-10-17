@@ -228,7 +228,7 @@ refdes=A3
 T 53900 45500 5 10 1 1 0 0 1
 model-name=КТ368B
 T 53200 45300 5 10 1 1 0 0 1
-file=../models/KT368B.mod
+file=../models/bjt/KT368B.mod
 }
 T 52800 44000 9 10 1 0 0 0 1
 Нагрузка

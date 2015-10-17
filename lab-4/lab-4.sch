@@ -61,7 +61,7 @@ refdes=A3
 T 44200 46900 5 10 1 1 0 0 1
 model-name=KT315B
 T 43400 46700 5 10 1 1 0 0 1
-file=../models/KT315B.mod
+file=../models/bjt/KT315B.mod
 }
 T 45500 43500 9 10 1 0 0 0 2
 Источник
@@ -265,7 +265,7 @@ refdes=A4
 T 44200 45900 5 10 1 1 0 0 1
 model-name=KT361B
 T 43400 45700 5 10 1 1 0 0 1
-file=../models/KT361B.mod
+file=../models/bjt/KT361B.mod
 }
 C 51900 47200 1 270 0 resistor-2.sym
 {
