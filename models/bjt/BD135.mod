@@ -1,6 +1,6 @@
 * SPICE модель BD135 - ближайший аналог КТ815Б
 * источник: http://www.datasheetarchive.com/files/philips/models/bd135_137_139_3.html
-.MODEL QBD135 NPN( 
+.MODEL BD135 NPN( 
 +     IS = 4.815E-14 
 +     NF = 0.9897 
 +     ISE = 1.389E-14 

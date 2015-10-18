@@ -22,7 +22,7 @@
 
 *^^^^^^^^  End of included SPICE model from ../models/bjt/BC546B.mod ^^^^^^^^
 *
-*vvvvvvvv  Included SPICE model from ../models/bjt/QBD136.mod vvvvvvvv
+*vvvvvvvv  Included SPICE model from ../models/bjt/BD136.mod vvvvvvvv
 * SPICE модель BD136 - ближайший аналог КТ814Б
 * источник: http://www.onsemi.ru.com/pub_link/Collateral/BD136.SP3
 **************************************
@@ -36,7 +36,7 @@
 *    Modeling services provided by   *
 * Interface Technologies www.i-t.com *
 **************************************
-.MODEL QBD136 NPN(
+.MODEL BD136 PNP(
 + IS=1e-09 BF=681.414 NF=0.85 VAF=10
 + IKF=0.196957 ISE=1e-08 NE=1.57381 BR=56.5761
 + NR=1.5 VAR=0.975138 IKR=0.952908 ISC=1e-08
@@ -47,13 +47,17 @@
 + CJC=1e-11 VJC=0.75 MJC=0.33 XCJC=0.9
 + FC=0.5 CJS=0 VJS=0.75 MJS=0.5
 + TR=1e-07 PTF=0 KF=0 AF=1)
+* Model generated on Feb 22, 2004
+* Model format: SPICE3
 
-*^^^^^^^^  End of included SPICE model from ../models/bjt/QBD136.mod ^^^^^^^^
+
+
+*^^^^^^^^  End of included SPICE model from ../models/bjt/BD136.mod ^^^^^^^^
 *
-*vvvvvvvv  Included SPICE model from ../models/bjt/QBD135.mod vvvvvvvv
+*vvvvvvvv  Included SPICE model from ../models/bjt/BD135.mod vvvvvvvv
 * SPICE модель BD135 - ближайший аналог КТ815Б
 * источник: http://www.datasheetarchive.com/files/philips/models/bd135_137_139_3.html
-.MODEL QBD135 NPN( 
+.MODEL BD135 NPN( 
 +     IS = 4.815E-14 
 +     NF = 0.9897 
 +     ISE = 1.389E-14 
@@ -93,7 +97,7 @@
 +     MJS = 0.333 
 +     FC = 0.9359 ) 
 
-*^^^^^^^^  End of included SPICE model from ../models/bjt/QBD135.mod ^^^^^^^^
+*^^^^^^^^  End of included SPICE model from ../models/bjt/BD135.mod ^^^^^^^^
 *
 *vvvvvvvv  Included SPICE model from ../models/led/NSPW500BS.mod vvvvvvvv
 * SPICE модель "стандартного" светодиода NSPW500BS
@@ -105,18 +109,18 @@
 *
 *==============  Begin SPICE netlist of main design ============
 C1 Vout 0 100uF  
-R1 0 Ve 220  
-R2 vc1 Vin 1k  
-R3 Vin vc2 22k  
-R4 Vd Vout 1.5k  
-R5 0 Vd 1k  
-R6 Vop Vout 2.7k  
-RL 0 Vout 100  
-DVD1 0 Vop NSPW500BS 
-Vin Vin 0 DC 7V pulse(6V 8V 2ms 2ms 2ms 3ms 10ms)
-QVT1 vc1 Vop Ve BC546B 
-QVT2 vc2 Vd Ve BC546B 
-QVT3 vc2 vc1 Vin QBD136 
-QVT4 Vin vc2 Vout QBD135 
+R1 0 Ve 1k  
+R2 Vc1 Vin 470  
+*R3 Vin Vc2 22k  
+R4 Vd Vout 1.3k  
+R5 0 Vd 1.5k  
+R6 Vop Vout 2.2k  
+RL 0 Vout 5  
+DVD1 Vop 0 NSPW500BS 
+Vin Vin 0 DC 7V pulse(6V 9V 2ms 2ms 2ms 3ms 10ms)
+QVT1 Vc1 Vop Ve BC546B 
+QVT2 Vc2 Vd Ve BC546B 
+QVT3 Vc2 Vc1 Vin BD136 
+QVT4 Vin Vc2 Vout BD135 
 .INCLUDE simulation.cmd
 .end
