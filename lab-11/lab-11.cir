@@ -5,12 +5,12 @@
 VCC VCC 0 DC 4.5V
 
 * конденсатор
-C1 v1 vc2 100uF
+C1 v1 vc2 22uF
 
 * резисторы
-R1 VCC  v1   6.8k
-R2 vb1  v1   470
-R3 vb1  0    1k
+R1 VCC  v1   68k
+R2 vb1  v1   1k
+R3 vb1  0    10k
 R4 vc1  vb2  10k  
 R5 vc2  0    2.2k
 R6 vc2  vled 150
