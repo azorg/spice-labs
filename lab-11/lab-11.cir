@@ -5,18 +5,22 @@
 VCC VCC 0 DC 4.5V
 
 * конденсатор
-C1 vb1 vc2 100uF
+C1 v1 vc2 100uF
 
 * резисторы
-R1 vb1  VCC  6.8k
-R2 vb1  0    1k
-R3 vc1  vb2  4.7k  
-R4 vc2  vout 100  
-R5 vout 0    2.2k
+R1 VCC  v1   6.8k
+R2 vb1  v1   470
+R3 vb1  0    1k
+R4 vc1  vb2  10k  
+R5 vc2  0    2.2k
+R6 vc2  vled 150
 
 * транзисторы
 QVT1 vc1 vb1 0   2N3904
 QVT2 vc2 vb2 VCC 2N3906
+
+* светодиод
+DLED1 vled 0 NSPW500BS 
 
 * SPICE модель транзистора 2N3904 (из просторов Интернет)
 .MODEL 2N3904 npn
@@ -43,6 +47,9 @@ QVT2 vc2 vb2 VCC 2N3906
 +CJC=6.18444e-12 VJC=0.4 MJC=0.234098 XCJC=0.8
 +FC=0.5415 CJS=0 VJS=0.75 MJS=0.5
 +TR=2.42096e-06 PTF=0 KF=0 AF=1
+
+* SPICE модель "стандартного" светодиода NSPW500BS
+.model NSPW500BS D(Is=.27n Rs=5.65 N=6.79 Cjo=42p Xti=200)
 
 * температурный режим
 .options TEMP=25
