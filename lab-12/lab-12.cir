@@ -1,0 +1,66 @@
+* File: "lab-12.cir"
+* Повышающий DC-DC преобразователь (boost converter)
+
+* источник питания +1.5В [1.46-1.57]
+VCC vin 0 DC 1.5V
+
+* конденсаторы
+C1 vb1  vc 1nF
+*C2 vout 0  0.1u
+
+* дроссель
+L1 vin vl 0.2m
+
+* резисторы
+R1 vb1  0    22k
+R2 vb1  vin  15k
+R3 vc1  vb2  1k
+R4 Vb2  0    10k
+R5 vc2  vc   1k
+R6 vl   vc2  1
+
+* активная нагрузка
+RL vout 0    100
+
+* транзисторы (К-Б-Э)
+QVT1 vc1 vb1 vin 2N3906
+QVT2 vc2 vb2 0   2N2222
+
+* диод
+D1 vc2 vout 1N5819
+
+* SPICE модель транзистора 2N3906 (из просторов Интернет):
+.MODEL 2N3906 PNP
++  IS=1.14615e-14 BF=535.453 NF=1.06473 VAF=10
++  IKF=0.0234918 ISE=1.33613e-13 NE=1.62939 BR=4.66099
++  NR=1.19618 VAR=2.77165 IKR=0.0740931 ISC=1.33613e-13
++  NC=1.22182 RB=0.1 IRB=1.05964 RBM=0.1
++  RE=0.0001 RC=1.39183 XTB=0.1 XTI=1
++  EG=1.05 CJE=6.03788e-12 VJE=0.4 MJE=0.272764
++  TF=4.8381e-10 XTF=1.5 VTF=1 ITF=1
++  CJC=6.18444e-12 VJC=0.4 MJC=0.234098 XCJC=0.8
++  FC=0.5415 CJS=0 VJS=0.75 MJS=0.5
++  TR=2.42096e-06 PTF=0 KF=0 AF=1
+
+* SPICE модель классического импортного транзистора 2N2222 из datasheet:
+* http://www.datasheetarchive.com/dl/Datasheet-021/DSA00361080.pdf
+.model 2N2222 NPN (IS=19.34n EG=1.11 VAF=250.3 BF=163.8 ISE =174.3f
++  NE=1.647 IKF=3.0 XTB=1.5 BR=11.49 ISC=19.9f NC=1.88 IKR=10.75
++  RC=0.3567 CJC=11.02p VJC=0.3869 MJC=0.3292 FC=0.5 CJE=29.31p VJE=0.9036
++  MJE=0.4101 TR=38.32n TF=361.8p ITF=5.282 XTF=249.9 VTF=10)
+
+* SPICE модель диода с барьером Шотки средней мощности (Imax=1A, Umax=40В)
+* позаимствовано из "LTSpice IV"
+.model 1N5819 D(Is=31.7u Rs=.051 N=1.373 Cjo=110p M=.35 Eg=.69 Xti=2)
+*               Iave=1 Vpk=40 mfg=OnSemi type=Schottky
+
+* температурный режим
+.options TEMP=25
+
+* моделирование переходного процесса
+* шаг моделирования - 1 мкс
+* время моделирования - 0.1 с
+.tran 0.1u 1m
+
+.end
+
