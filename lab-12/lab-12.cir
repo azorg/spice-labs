@@ -6,35 +6,29 @@ VCC vcc 0 DC 1.5V
 
 * конденсаторы
 C0 vin  0   100uF
-C1 vc3  vc1 2.2nF
+C1 vc   vc2 2.2nF
 C2 vout 0   4.7uF
 
 * дроссель
-L1 vin vl 1m
+L1 vin vl 100u
 
 * резисторы
 R0 vcc vin  1
-R1 vb1 vc3  47k
-R2 vb2 vin  47k
-R3 vb2 vc1  10k
-R4 vb3 vc2  100
-R5 vb3 0    4.7k
-*R6 vb4 vd   100
-R6 vb4 vout 100k
-R7 vb4 0    10k
-R8 vc3 vl   1
+R1 vb1 vc   1k
+R2 vc  0    22k
+R3 vb2 vc1  100
+R4 vb2 0    10k
+RL vc2 vl   1
 
 * активная нагрузка
-RL vout 0 1k
+RN vout 0 100
 
 * транзисторы (К-Б-Э)
-QVT1 vc1 vb1 0   2N3904
-QVT2 vc2 vc1 vin 2N3906
-QVT3 vc3 vb3 0   2N2222
-QVT4 vb1 vb4 0   2N3904
+QVT1 vc1 vb1 vin 2N3906
+QVT2 vc2 vb2 0   2N2222
 
 * диод 
-D1 vc3 vout 1N5819
+D1 vc2 vout 1N5819
 
 * стабилитрон
 *D2 vd vout DS
@@ -91,7 +85,7 @@ D1 vc3 vout 1N5819
 * моделирование переходного процесса
 * шаг моделирования - 1 мкс
 * время моделирования - 0.1 с
-.tran 0.1u 5m
+.tran 0.1u 10m
 
 .end
 
