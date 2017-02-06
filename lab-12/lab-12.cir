@@ -1,41 +1,37 @@
 * File: "lab-12.cir"
 * Повышающий импульсный преобразователь напряжения (DC-DC boost converter)
 
-* источник питания +1.5В
+* источник питания +1.5В [0.71-2.0В]
 VCC vcc 0 DC 1.5V
 
 * конденсаторы
-C0 vin  0  100u
-C1 vc3  vc 3.3nF
-C2 vout 0  10u
+C0 vin  0   100uF
+C1 vc3  vc1 2.2nF
+C2 vout 0   4.7uF
 
 * дроссель
 L1 vin vl 1m
 
 * резисторы
-R0  vcc  vin  1
-R1  vb1  vin  20k
-R2  vb1  0    10k
-R3  vc1  vin  47k
-R4  ve1  0    1k
-R5  vb3  vc2  100
-R6  vb3  0    4.7k
-R7  vc3  vb1  10k
-R8  vc3  vl   1
-R9  vc1  vc   1k
-R10 vc3  vb4  68k
-*R11 vb5  0    2k
-*R12 vb5  vd   100
+R0 vcc vin  1
+R1 vb1 vc3  47k
+R2 vb2 vin  47k
+R3 vb2 vc1  10k
+R4 vb3 vc2  100
+R5 vb3 0    4.7k
+*R6 vb4 vd   100
+R6 vb4 vout 100k
+R7 vb4 0    10k
+R8 vc3 vl   1
 
 * активная нагрузка
-RL  vout 0    100
+RL vout 0 1k
 
 * транзисторы (К-Б-Э)
-QVT1 vc1  vb1 ve1 2N3904
-QVT2 vc2  vc1 vin 2N3906
-QVT3 vc3  vb3 0   2N2222
-QVT4 vc   vb4 0   2N3904
-*QVT5 vb4  vb5 0   2N3904
+QVT1 vc1 vb1 0   2N3904
+QVT2 vc2 vc1 vin 2N3906
+QVT3 vc3 vb3 0   2N2222
+QVT4 vb1 vb4 0   2N3904
 
 * диод 
 D1 vc3 vout 1N5819
@@ -87,7 +83,7 @@ D1 vc3 vout 1N5819
 +             Vj=0.75 Eg=0.67 Bv=60 Ibv=15u)
 
 * SPICE модель абстрактного стабилитрона (импровизация):
-.model DS D(Bv=6 Ibv=5m Is=2.52n Rs=.568 N=1.752 Cjo=4p M=.4 tt=20n)
+.model DS D(Bv=5.6 Ibv=5m Is=2.52n Rs=.568 N=1.752 Cjo=4p M=.4 tt=20n)
 
 * температурный режим
 .options TEMP=25
