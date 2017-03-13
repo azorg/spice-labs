@@ -8,4 +8,5 @@ ext="cir"
 #ext="net"
 
 ngspice "lab-${i}.${ext}"
+#ngspice "lab-${i}-alt.${ext}"
 
