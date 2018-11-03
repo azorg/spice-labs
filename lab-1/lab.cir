@@ -25,7 +25,7 @@ R6 0 ve2 470
 RIN vsin vin 1k
 
 * сопротивление нагрузки
-RL 0 vout 100
+RL 0 vout 1000
 
 * источник питания +9В
 VCC vcc 0 DC 9V

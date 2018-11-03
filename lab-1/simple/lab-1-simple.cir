@@ -1,31 +1,27 @@
-* File: "lab-1.cir"
-* Усилитель переменного тока на 2-х биполярных транзисторах с непосредственными
-* связями по схеме ОЭ и ОК с обратной отрицательной связью по постоянному
+* File: "lab-1-simple.cir"
+* Изучение усилителя переменного тока на биполярной транзисторе с
+* по схеме ОЭ и обратной последовательной отрицательной связью по постоянному
 * и переменному току.
 
 * конденсаторы
 CIN vin vb 10uF
-COUT ve2 vout 100uF
+COUT vc vout 100uF
 CE 0 vce 33uF  
-CCOR ve vce 10pF
-CVCC VCC 0 1000uF  
-
-* дроссель частотной коррекции в коллекторной цепи VT1
-LCOR vl vc 33uH
+CVCC Vccc 0 1000uF  
 
 * резисторы
-R1 vb VCC 30k
-R2 0 vb 10k
-R3 vl VCC 3.3k
-R4 ve vce 200
+R1 vb Vccc 47k
+R2 vb 0 10k
+R3 vc Vccc 3.3k
+R4 ve vce 100
 R5 0 vce 1k
-R6 0 ve2 470
+R6 VCC Vccc 100
 
 * внутреннее сопротивление источника
 RIN vsin vin 1k
 
 * сопротивление нагрузки
-RL 0 vout 100
+RL 0 vout 3.3k
 
 * источник питания +9В
 VCC vcc 0 DC 9V
@@ -33,15 +29,15 @@ VCC vcc 0 DC 9V
 * источник сигнала
 VSIN vsin 0 dc 0 ac 1mV sin(0 1mV 1kHz)
 
-* n-p-n транзисторы
-QVT1 vc  vb ve  KT368B
-QVT2 VCC vc ve2 KT368B
+* n-p-n транзистор(ы) (C-B-E)
+QVT1 vc vb ve 2N2222
 
-* SPICE модель советского ВЧ транзистора КТ368Б (h21э=110)
-.model KT368B NPN(Is=8.675f Xti=3 Eg=1.11 Vaf=108 Bf=110 Ne=1.377
-+  Ise=9.128f Ikf=.3608 Xtb=1.5 Var=56 Br=1.45 Nc=2 Isc=16.3f Ikr=.125
-+  Rb=31.5 Rc=2.445 Cjc=2.35p Vjc=.75 Mjc=.33 Fc=.5 Cje=2.786p Vje=.69
-+  Mje=.37 Tr=2.147n Tf=84.62p Itf=.15 Vtf=25 Xtf=2)
+* SPICE модель классического импортного транзистора 2N2222 из datasheet:
+* http://www.datasheetarchive.com/dl/Datasheet-021/DSA00361080.pdf
+.model 2N2222 NPN (IS=19.34n EG=1.11 VAF=250.3 BF=163.8 ISE =174.3f
++  NE=1.647 IKF=3.0 XTB=1.5 BR=11.49 ISC=19.9f NC=1.88 IKR=10.75
++  RC=0.3567 CJC=11.02p VJC=0.3869 MJC=0.3292 FC=0.5 CJE=29.31p VJE=0.9036
++  MJE=0.4101 TR=38.32n TF=361.8p ITF=5.282 XTF=249.9 VTF=10)
 
 * температурный режим
 .options TEMP=25
